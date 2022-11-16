@@ -20,4 +20,18 @@
 <div class="card text-center">
 <button><%= link_to "Back to list", restaurants_path %></button>
 </div>
+
+<div class="card text-center">
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+</div>
+
+<div class="card text-center">
+<button><%= link_to "Add review", new_restaurant_review_path(@restaurant) %></button>
+</div>
+
 </div>
