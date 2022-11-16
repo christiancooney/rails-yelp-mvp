@@ -1,0 +1,19 @@
+
+<div class="container text-center">
+<h1>Restaurants</h1>
+
+<div class="card text-center">
+<ol class="list-group">
+  <% @restaurants.each do |restaurant| %>
+    <li class="list-group-item"><%= link_to restaurant.name, restaurant_path(restaurant)%></li>
+    <button><%= link_to "Delete", restaurant_path(restaurant),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %></button>
+  <% end %>
+  </div>
+</ol>
+
+<div class="card text-center">
+<button class="text-center"><%= link_to "Add a new restaurant", restaurants_new_path %></button>
+</div>
+</div>

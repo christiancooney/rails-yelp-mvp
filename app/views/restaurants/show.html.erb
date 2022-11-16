@@ -1,0 +1,23 @@
+
+<div class="container text-center border">
+<h1>Show Restaurants</h1>
+<div class="card text-center">
+<h2><%= @restaurant.name %></h2>
+<p>Address: <%= @restaurant.address %></p>
+<p>Contact: <%= @restaurant.phone_number %></p>
+<p>Cuisine: <%= @restaurant.category %></p>
+
+</div>
+<div class="card text-center">
+
+<button><%= link_to "Delete",
+  restaurant_path,
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%></button>
+
+<button><%= link_to "Edit restaurant", edit_restaurant_path %></button>
+</div>
+<div class="card text-center">
+<button><%= link_to "Back to list", restaurants_path %></button>
+</div>
+</div>
